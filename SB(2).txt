@@ -1,0 +1,47 @@
+12)what is IOC control ?
+Inversion of Control (IoC) is a design principle where the control of object creation and dependency management is delegated to a container or framework, instead of being handled manually in your code.
+
+The IoC Container (like Spring) creates objects, resolves their dependencies, and manages their lifecycle.
+Developers declare dependencies (e.g., using annotations like @Autowired) instead of creating objects with new.
+IoC promotes loose coupling between components by following the Dependency Injection principle.
+
+
+13)spring bean - lifeCycle
+   *Container gets started.
+   *Container creates the objec of bean as per request.
+   *Dependencies is created
+   *Dependencies is injected
+   
+   
+Bean Lifecycle Stages
+Bean Instantiation
+The Spring container creates an instance of the bean using its constructor or factory method.
+
+Dependency Injection (Populating Properties)
+The container injects dependencies specified (e.g., via @Autowired, XML, or Java config).
+
+Bean Initialization
+
+Spring calls lifecycle callbacks like @PostConstruct or a custom init-method.
+Additional logic (e.g., initializing resources) can be executed here.
+Bean Usage
+The bean is ready to be used in the application.
+
+Bean Destruction
+
+When the container shuts down, it performs cleanup by calling @PreDestroy or a custom destroy-method.
+Useful for releasing resources (e.g., closing files or database connections).
+
+
+14)What is bean factory, have you used XMLBeanFactory ?
+this is root interface for accessing a spring bean container.
+it is the actual container instantiates, configures, and manages a numb of beans.
+
+XMLBeanFactory
+XmlBeanFactory is a deprecated implementation of BeanFactory used to create beans from an XML configuration file. It was used primarily in earlier versions of Spring (before ApplicationContext became the standard).
+
+Why Deprecated?
+It lacks advanced features like event propagation, annotation-based configuration, or AOP.
+Replaced by ApplicationContext, which is more versatile and widely used.
+
+
