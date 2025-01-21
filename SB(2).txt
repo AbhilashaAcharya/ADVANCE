@@ -44,4 +44,104 @@ Why Deprecated?
 It lacks advanced features like event propagation, annotation-based configuration, or AOP.
 Replaced by ApplicationContext, which is more versatile and widely used.
 
+15)difference between BeanFactory and ApplicationContext in Spring
+BeanFactory:
+
+Basic container for Spring beans.
+Loads beans lazily (creates beans only when they are needed).
+Suitable for simple and lightweight applications.
+ApplicationContext:
+
+Advanced container with additional features.
+Loads beans eagerly (creates all beans during startup unless specified).
+Supports additional features like:
+Event propagation.
+Internationalization.
+Annotation-based configurations.
+Integration with Spring AOP.
+In summary: Use ApplicationContext for most use cases due to its extra capabilities, and BeanFactory for resource-constrained scenarios.
+
+
+16)difference between Setter Injection and Constructor Injection in Java
+Setter Injection:
+Uses setter methods to inject dependencies.
+Allows partial injection (can set or update values after object creation).
+Good for optional or mutable dependencies.
+
+Constructor Injection:
+Uses constructors to inject dependencies.
+Ensures mandatory dependencies are provided during object creation.
+Good for required or immutable dependencies.
+
+
+17)what are diffrent module in spring ?
+
+1. Core Container
+Handles the core functionality of Spring:
+Core: Provides the core features like BeanFactory.
+Beans: Supports bean creation, configuration, and dependency injection.
+Context: Provides application context for enterprise-specific features.
+Expression Language (SpEL): Enables querying and manipulation of objects.
+
+2. AOP (Aspect-Oriented Programming)
+Provides support for cross-cutting concerns like logging, security, and transactions.
+
+3. Data Access/Integration
+Handles database and messaging integration:
+JDBC: Simplifies database operations and error handling.
+ORM: Integrates with frameworks like Hibernate and JPA.
+JMS: Supports messaging (Java Messaging Service).
+Transactions: Manages declarative and programmatic transactions.
+
+4. Web
+Used for creating web applications:
+Web: Basic web application development.
+Web MVC: Framework for MVC-based web applications.
+Web WebSocket: Supports WebSocket-based communication.
+Web Portlet: For portlet development (optional).
+
+5. Test
+Provides testing support, including JUnit and TestNG integration.
+
+6. Other Modules (for advanced functionality):
+Security: Authentication and authorization.
+Messaging: Integration with messaging systems (e.g., RabbitMQ).
+Integration: Provides enterprise integration patterns.
+These modules make Spring flexible and suitable for a wide range of applications.
+
+
+
+18)diffrence between @autowire and @inject 
+@Autowired:
+Part of the Spring framework.
+Specific to Spring, providing Spring-based dependency injection.
+
+@Inject:
+Part of the Java CDI (Contexts and Dependency Injection) specification in Javax package.
+Works with any framework that supports the CDI standard.
+
+
+19)diffrnce between @Bean @component?
+@Bean when you need more control over the bean definition or for third-party classes.
+@Component for application-specific classes that can be auto-detected during component
+
+
+20)what is autowiring in spring ? what are the autowrining modes ?
+injecting the beans automatically . we don't need to write explicit injection logic.
+no - this is the default mode, it means autowiring is not enabled
+byName - injects the bean based on property name. it's use setter method.
+byType - based on byType, its used setter
+constructor - it injects the bean using constructor
+
+21)different bean scopes in spring ?
+Spring provides several bean scopes to define the lifecycle and visibility of beans. These scopes determine how and when a bean instance is created and shared within an application.
+
+Singleton (Default Scope): A single instance of the bean is created for the entire Spring container.
+Prototype: A new bean instance is created every time it is requested.
+Request (Web applications only): A new bean instance is created for each HTTP request.
+Session (Web applications only): A new bean instance is created for each HTTP session.
+Application (Web applications only): A single bean instance is created for the entire ServletContext.
+WebSocket (WebSocket-enabled applications only): A new bean instance is created for each WebSocket session.
+
+
 
