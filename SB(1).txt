@@ -156,5 +156,10 @@ spring-boot-starter-parent
 spring-boot-maven-plugin
 spring-boot-starter-test,security,actuater,web,jpa
 
+------------------------------------------------------------------------------------------------
+ResponseEntity in Java (Spring Boot) is a class used to represent HTTP responses. It allows you to send status codes, headers, and response body in a structured way.
 
+Example:
+return new ResponseEntity<>("Success", HttpStatus.OK);
+This sends a response with body "Success" and status 200 OK.
 
