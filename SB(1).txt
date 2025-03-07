@@ -45,14 +45,19 @@ Deployment: Packaged as a standalone JAR file (or WAR if required), run with jav
 @SpringBootApplication: combines three annotations
 
 @Configuration:
-Indicates a class contains Spring bean definitions.Equivalent to an XML configuration file in legacy Spring.
+//Indicates a class contains Spring bean definitions.Equivalent to an XML configuration file in legacy Spring.
+It tells Spring that this class contains configuration settings (like defining beans).
+Similar to an XML configuration but done in Java.
 
 @EnableAutoConfiguration:
-Automatically configures beans based on the classpath dependencies and settings.Removes the need for manual configuration.
+//Automatically configures beans based on the classpath dependencies and settings.Removes the need for manual configuration.
+It tells Spring Boot to automatically configure components based on dependencies.
+For example, if you add Spring Web, it automatically configures an embedded Tomcat server
      
 @ComponentScan :
 Scans the package and its sub-packages for Spring components (@Component, @Service, etc.).
 Automatically registers them as beans in the Spring container.
+It tells Spring to look for components (@Component, @Service, @Repository, @Controller) in a specified package and register them.
 
 @Bean:
 Purpose: It tells Spring, "This method creates a bean (an object) that Spring will manage."
