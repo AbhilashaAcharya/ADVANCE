@@ -40,20 +40,20 @@ Deployment: Packaged as a standalone JAR file (or WAR if required), run with jav
 
 @SpringBootApplication: combines three annotations
 
-✅ @Configuration
-🧠 "Hey Spring, this class has some bean definitions."
-It tells Spring that the class contains (bean)configuration code, like methods annotated with @Bean.
-Think of it like: “This class is setting up stuff for the app.”
-
-✅ @EnableAutoConfiguration
-🚀 "Spring, go ahead and auto-configure stuff for me based on the dependencies I’ve added."
-It looks at what’s in your project (like web, JPA, security, etc.) and configures it automatically.
-Like: “You added Spring Web? Cool, I’ll set up Tomcat, MVC, etc., for you.”
-
-✅ @ComponentScan
-🔍 "Look for my components (like @Service, @Controller, etc.) in this package and register them."
-It tells Spring to scan the package where your app is and register your classes as Spring beans automatically.
-Like: “Find and manage my important classes, please!”
+@Configuration:
+ //Indicates a class contains Spring bean definitions.Equivalent to an XML configuration file in legacy Spring.
+ It tells Spring that this class contains configuration settings (like defining beans).
+ Similar to an XML configuration but done in Java.
+ 
+ @EnableAutoConfiguration:
+ //Automatically configures beans based on the classpath dependencies and settings.Removes the need for manual configuration.
+ It tells Spring Boot to automatically configure components based on dependencies.
+ For example, if you add Spring Web, it automatically configures an embedded Tomcat server
+      
+ @ComponentScan :
+ //Scans the package and its sub-packages for Spring components (@Component, @Service, etc.).
+ //Automatically registers them as beans in the Spring container.
+ It tells Spring to look for components (@Component, @Service, @Repository, @Controller) in a specified package and register them.
 
 @Bean:
 Purpose: It tells Spring, "This method creates a bean (an object) that Spring will manage."
