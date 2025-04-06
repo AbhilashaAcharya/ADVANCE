@@ -42,7 +42,7 @@ Deployment: Packaged as a standalone JAR file (or WAR if required), run with jav
 
 ✅ @Configuration
 🧠 "Hey Spring, this class has some bean definitions."
-It tells Spring that the class contains configuration code, like methods annotated with @Bean.
+It tells Spring that the class contains (bean)configuration code, like methods annotated with @Bean.
 Think of it like: “This class is setting up stuff for the app.”
 
 ✅ @EnableAutoConfiguration
